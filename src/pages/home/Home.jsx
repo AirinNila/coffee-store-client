@@ -1,4 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
+import CoffeeCard from "../../components/CoffeeCard";
 
 const Home = () => {
     const data = useLoaderData()
@@ -44,11 +45,15 @@ const Home = () => {
                 </div>
             </div>
 
-            <section className="flex flex-col items-center mt-8">
+            <section className="flex flex-col items-center gap-4 mt-8">
                 <p>--- Sip & Savor ---</p>
-                <h3 className="text-2xl font-bold">Our Popular Products
-                    Our Popular Products</h3>
-                <Link to="/addCoffee"><button className="btn">add coffee</button></Link>
+                <h3 className="text-2xl font-bold">Our Popular Products</h3>
+                <Link to="/addCoffee"><button className="btn bg-[#E3B577]">add coffee</button></Link>
+                <div className="grid grid-cols-1 gap-4 justify-center md:grid-cols-2 rounded-lg">
+                    {
+                        data.map(data => <CoffeeCard key={data._id} data={data}></CoffeeCard>)
+                    }
+                </div>
             </section>
 
         </div>
