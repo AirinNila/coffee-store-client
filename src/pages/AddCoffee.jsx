@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 const AddCoffee = () => {
@@ -35,7 +36,10 @@ const AddCoffee = () => {
             })
     }
     return (
-        <div className="flex justify-center">
+          <div className='container mx-auto mt-6'>
+            
+        <div className="flex flex-col gap-4">
+          <Link to="/"><button className="btn text-black">Back to Home</button></Link>
             <div className="flex flex-col w-4/5 justify-center items-center p-4 md:p-12 bg-[#F4F3F0] gap-4">
                 <h3 className="text-2xl font-bold">Add New Coffee</h3>
                 <p className="text-center">It is a long established fact that a reader will be distraceted by the readable content of a <br /> page when looking at its layout. The point of using Lorem Ipsum is that it has a <br /> more-or-less normal distribution  of letters, as opposed to using Content here.</p>
@@ -75,6 +79,7 @@ const AddCoffee = () => {
                     </form>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
